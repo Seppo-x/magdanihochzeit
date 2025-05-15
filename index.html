@@ -7,78 +7,60 @@
     body {
       margin: 0;
       padding: 0;
+      background-color: #000;
       font-family: sans-serif;
-      color: white;
-      position: relative;
-      height: 100vh;
       overflow: hidden;
+      position: relative;
+      color: white;
     }
 
-    /* Hintergrund mit vielen 3ern */
-    .background {
+    /* Hintergrund mit gestreuten 3ern */
+    .three {
       position: absolute;
-      top: 0;
-      left: 0;
-      font-size: 2rem;
-      width: 100%;
-      height: 100%;
-      color: rgba(255, 255, 255, 0.1);
-      white-space: pre-wrap;
-      word-break: break-word;
-      z-index: 0;
-      padding: 1rem;
-      overflow-y: scroll;
+      font-size: 3rem;
+      color: rgba(255, 255, 255, 0.05);
+      user-select: none;
+      pointer-events: none;
     }
 
-    /* Vordergrund-Text */
+    /* Vordergrund-Container */
     .content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 1;
+      position: relative;
+      z-index: 10;
+      max-width: 600px;
+      margin: 100px auto;
+      padding: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 12px;
       text-align: center;
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 2rem;
-      border-radius: 1rem;
-      max-width: 90%;
     }
 
-    .color-list {
-      list-style: none;
-      padding: 0;
+    .color-hint {
       font-size: 1.5rem;
-      margin-top: 1.5rem;
+      margin: 10px 0;
     }
-
-    .color-list li {
-      margin: 0.5rem 0;
-    }
-
-    .red { color: red; }
-    .green { color: green; }
-    .blue { color: blue; }
-    .purple { color: purple; }
-    .yellow { color: gold; }
   </style>
 </head>
 <body>
-  <div class="background">
-    <!-- Sehr viele 3er im Hintergrund -->
-    3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333
-  </div>
 
+  <!-- Einige gestreute 3er -->
+  <div class="three" style="top: 10%; left: 5%;">3</div>
+  <div class="three" style="top: 20%; left: 70%;">3</div>
+  <div class="three" style="top: 50%; left: 40%;">3</div>
+  <div class="three" style="top: 80%; left: 20%;">3</div>
+  <div class="three" style="top: 75%; left: 85%;">3</div>
+
+  <!-- Vordergrund-Text -->
   <div class="content">
     <h1>Glückwunsch, du hast alle Rätsel gelöst.</h1>
-    <p>Lässt sich das Schloss immer noch nicht knacken?<br>
-    Dann überdenk nochmal die Zuordnung zwischen Zahlen und Farben.</p>
-    <ul class="color-list">
-      <li class="red">Lila</li>
-      <li class="green">Blau</li>
-      <li class="blue">Gelb</li>
-      <li class="purple">Grün</li>
-      <li class="yellow">Rot</li>
-    </ul>
+    <p>…Doch lässt sich das Schloss immer noch nicht knacken?</p>
+    <p>Dann überdenk nochmal die Zuordnung der Farben:</p>
+    <div class="color-hint" style="color: red;">Lila</div>
+    <div class="color-hint" style="color: green;">Blau</div>
+    <div class="color-hint" style="color: blue;">Gelb</div>
+    <div class="color-hint" style="color: purple;">Grün</div>
+    <div class="color-hint" style="color: yellow;">Rot</div>
   </div>
+
 </body>
 </html>
